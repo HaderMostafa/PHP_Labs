@@ -4,9 +4,7 @@ $error_msg = array();
 
 if (isset($_POST["submit"])) {
 
-    //$submit= $_POST["submit"];
     $name = $_POST["name"];
-    //isset & trim  ? :
     $email = $_POST["email"];
     $message = $_POST["message"];
 
@@ -22,7 +20,6 @@ if (isset($_POST["submit"])) {
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error_msg[] = "email is not valid";
-        //print_r("12");
     }
 
     if (strlen($message) > 255) {
@@ -60,7 +57,6 @@ function get_default($field)
 foreach ($error_msg as $line) {
     echo "** $line <br/>";
 }
-//print_r($error_msg);
 ?>
 
     </div>
